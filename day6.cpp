@@ -53,9 +53,7 @@ int main(void)
                 g_size++;
             }
         }
-        
-        if(c != '\n')
-        {
+        else{
             int pos = q_to_int(c);
             alphabet_arr[pos]++;
         }
