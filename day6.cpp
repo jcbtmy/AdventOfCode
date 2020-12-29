@@ -41,13 +41,19 @@ int main(void)
 
     while(cin.get(c))
     {
-        if(c == '\n' && last_char == '\n'){
-            update_count(alphabet_arr, alphabet_size, &counter, g_size);
-            memset(alphabet_arr, 0, sizeof(alphabet_arr));
-            g_size = 0;
+        if(c == '\n'){
+
+            if(last_char == '\n'){
+
+                update_count(alphabet_arr, alphabet_size, &counter, g_size);
+                memset(alphabet_arr, 0, sizeof(alphabet_arr));
+                g_size = 0;
+            }
+            else{
+                g_size++;
+            }
         }
-        if(c == '\n' && last_char != '\n')
-            g_size++;
+        
         if(c != '\n')
         {
             int pos = q_to_int(c);
