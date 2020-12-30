@@ -1,0 +1,58 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+
+struct Bag{
+	
+	vector<string> contains;
+	vector<string> in;
+		
+} typedef Bag;
+
+string getColor(string& line)
+{
+	return string(line.substr(0, line.find("bag"); 
+}
+
+void takeout_garbageBags(unordered_map<string, Bag*> Bags)
+{
+	for(auto& bag : Bags)
+		delete bag.second;			
+}
+
+
+void parse_into_Bag(string line, unordered_map<string,Bag*>& Bags)
+{
+	const string contain = "contain";
+	string bag;
+	size_t pos = line.find(contain);	
+
+	bag = line.substr(0, pos);
+	line = line.substr(pos + strlen(contain) + 1, line.length());
+	bag = getColor(bag);
+	
+	if(Bags.find(bag) == Bags.end())
+		Bags[bag] = new Bag; 
+	
+	
+
+	return;
+}
+
+int main(void)
+{
+	unordered_map<string,Bag*> Bags;	
+	string line;
+	while(getline(cin, line))
+	{
+		parse_into_Bag(line, Bags);	
+	}
+
+	takeout_garbageBags(Bags);	
+	return 0;
+}
