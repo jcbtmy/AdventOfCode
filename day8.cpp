@@ -77,9 +77,8 @@ int main(void)
             iter = 0;
             accumulator = 0;
         }
-        else{
-            ops_executed[iter] = 1;
-        }
+    
+        ops_executed[iter] = 1;
         
         switch(copy[iter].instruction)
         {
