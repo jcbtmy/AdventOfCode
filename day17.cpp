@@ -85,7 +85,7 @@ void lifedeathCycle(vector<Position>& oldCells, vector<Position>& newCells, vect
         if(count == 3 && !in_position_set(iter, oldCells)) 
             newCells.push_back(iter);
 
-        if((count == 3 || count == 2) && in_position_set(iter, oldCells))
+        else if((count == 3 || count == 2) && in_position_set(iter, oldCells))
             newCells.push_back(iter);
 
     }
